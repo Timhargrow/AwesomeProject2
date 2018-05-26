@@ -5,24 +5,27 @@ import {
   View,
   AppRegistry
 } from 'react-native';
+
+var Styles = require('../style/style');
+
 export default class Services extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text >
-          In Kansas City!
+      <View style={Styles.container}>
+        <Text style={Styles.heading} >
+          We help you build professional websites and addictive apps!
+        </Text>
+        <Text style={Styles.sectionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vivamus sagittis sem turpis, non cursus velit faucibus pharetra.
+        Nunc finibus pretium diam non tempus. Integer hendrerit arcu id elit maximus, in aliquam tortor ultrices.
+        In vel felis tortor. Sed imperdiet nisi ligula, quis sollicitudin diam laoreet scelerisque.
+        Vestibulum quis nisi eu ex semper luctus. Quisque neque ex, sagittis sed mauris mattis, dapibus congue nunc.
+        Vivamus sit amet velit lobortis, sagittis neque in, hendrerit elit.
+        Integer non diam at tortor consectetur malesuada sed sed nunc.
         </Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 AppRegistry.registerComponent('Services', () => Services);

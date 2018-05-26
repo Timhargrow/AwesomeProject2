@@ -3,26 +3,45 @@ import {
   StyleSheet,
   Text,
   View,
-  AppRegistry
+  AppRegistry,
+  TextInput,
+  Button
 } from 'react-native';
+
+var Styles = require('../style/style');
+
 export default class Contact extends React.Component {
+  doSomething(){
+    
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text >
-          The Weather!
+      <View>
+        <Text style={Styles.heading}>
+          Contact Us
         </Text>
+        <View style={{padding: 10}}>
+          <TextInput
+            style={{height:40}}
+            placeholder="Enter Name"
+          />
+          <TextInput
+            style={{height:40}}
+            placeholder="Enter Email"
+          />
+          <TextInput
+            style={{height:40}}
+            placeholder="Optional Message"
+          />
+          <Button
+            title="Submit"
+            color="#841584"
+            onPress={this.doSomething}
+          />
+        </View>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 AppRegistry.registerComponent('Contact', () => Contact);

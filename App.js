@@ -3,30 +3,46 @@ import {
   StyleSheet,
   Text,
   View,
-  AppRegistry
+  Image,
+  AppRegistry,
+  ScrollView,
+  Switch,
 } from 'react-native';
 import Home from './app/Components/Home/Home';
-import Contact from './app/Components/Contact/Contact';
 import Services from './app/Components/Services/Services';
+import Contact from './app/Components/Contact/Contact';
+
+const Styles = require('./app/Components/style/style');
 
 export default class App extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      logoHidden: false
+    }
+  }
   render() {
+    let logoHidden = this.state.logoHidden;
+    let img = <Text></Text>;
+    if(logoHidden){
+      img = <Text></Text>;
+    } else {
+      img = <Image style={Styles.image} source={require('./logo.png')} />
+    }
     return (
-      <View style={styles.container}>
-      <Home />
-      <Contact />
-      <Services />
+      <View>
+        <View style={Styles.imageWrap}>
+          {img}
+            <Switch onValueChange={(value) => this.setState({logoHidden: value})} value={this.state.logoHidden} />
+        </View>
+          <ScrollView style={Styles.ScrollView}>
+          <Home />
+          <Services />
+          <Contact />
+          </ScrollView>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 AppRegistry.registerComponent('App', () => App);

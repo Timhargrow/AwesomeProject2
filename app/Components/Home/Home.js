@@ -3,9 +3,10 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   AppRegistry
 } from 'react-native';
-// import Styles from '../../style';
+
 var Styles = require('../style/style');
 
 export default class Home extends React.Component {
@@ -13,19 +14,19 @@ export default class Home extends React.Component {
     return (
       <View style={Styles.container}>
         <Text style={Styles.heading}>
-          What{"\'"}s good!
+          Welcome!
+        </Text>
+        <Text style={Styles.sectionText}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vivamus sagittis sem turpis, non cursus velit faucibus pharetra.
+        Nunc finibus pretium diam non tempus. Integer hendrerit arcu id elit maximus, in aliquam tortor ultrices.
+        In vel felis tortor. Sed imperdiet nisi ligula, quis sollicitudin diam laoreet scelerisque.
+        Vestibulum quis nisi eu ex semper luctus. Quisque neque ex, sagittis sed mauris mattis, dapibus congue nunc.
+        Vivamus sit amet velit lobortis, sagittis neque in, hendrerit elit.
+        Integer non diam at tortor consectetur malesuada sed sed nunc.
         </Text>
       </View>
     );
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
 AppRegistry.registerComponent('Home', () => Home);
